@@ -28,11 +28,14 @@
 
     <script>
       // Connect a the web3 provider
+      const localNet = "http://localhost:7545"
+      const testNet = "https://rinkeby.infura.io/v3/af3df0d221fc422596bd1ddce10fc709"
+      const url = testNet
       if (typeof web3 !== "undefined") {
         web3 = new Web3(web3.currentProvider);
       } else {
         web3 = new Web3(
-          new Web3.providers.HttpProvider("http://localhost:7545")
+          new Web3.providers.HttpProvider(url)
         );
       }
 
@@ -70,7 +73,7 @@
         },
       ]
 
-      var contractAccount = '0xBAb79A798Adf13D9A9ee90d4c26fF6732f01E16b'
+      var contractAccount = '0xdce915de9de9b90cebb05da8c04b7a50dcbad8a5'
 
       // Get the contract address
       var contractAbi = web3.eth.contract(abi);
