@@ -15,4 +15,10 @@ contract StarNotary {
 		starOwner = msg.sender;
 		emit starClaimed(starOwner);
 	}
+
+	function changeStarName(string memory _newName) public {
+		assert(msg.sender == starOwner);
+		starOwner = msg.sender;
+		starName = _newName;
+	}
 }
